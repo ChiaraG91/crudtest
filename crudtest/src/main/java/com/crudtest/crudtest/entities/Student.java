@@ -11,13 +11,13 @@ public class Student {
     private Long id;
     private String name;
     private String surname;
-    private Boolean isWorking;
+    private boolean isWorking;
 
-    public Student(Long id, String name, String surname, Boolean isWorking) {
+    public Student(Long id, String name, String surname, boolean working) {
         this.id = id;
         this.name = name;
         this.surname = surname;
-        this.isWorking = isWorking;
+        this.isWorking = working;
     }
 
     public Student() {
@@ -47,11 +47,11 @@ public class Student {
         this.surname = surname;
     }
 
-    public Boolean getWorking() {
+    public boolean getWorking() {
         return isWorking;
     }
 
-    public void setWorking(Boolean working) {
+    public void setWorking(boolean working) {
         isWorking = working;
     }
 }

@@ -42,13 +42,13 @@ public class StudentService {
     }
 
 
-    public Student deleteStudent(Long id, Student student){
+    public Student deleteStudent(Long id){
         studentRepository.deleteById(id);
-        return student;
+        return null;
     }
 
 
-    public Optional<Student> updateIsWorking(Long id, Boolean working) {
+    public Optional<Student> updateIsWorking(Long id, boolean working) {
         Optional<Student> studentOptional = studentRepository.findById(id);
         if (studentOptional.isPresent()) {
             studentOptional.get().setWorking(working);

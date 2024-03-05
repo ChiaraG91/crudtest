@@ -44,14 +44,14 @@ public class StudentController {
     }
 
     @DeleteMapping("/delete")
-    public ResponseEntity<Student> deleteStudent(@RequestParam Long id, @RequestBody Student student){
-        Student studentDaCancellare = studentService.deleteStudent(id,student);
+    public ResponseEntity<Student> deleteStudent(@RequestParam Long id){
+        Student studentDaCancellare = studentService.deleteStudent(id);
         return ResponseEntity.ok().body(studentDaCancellare);
     }
 
     @PatchMapping("/setstato/{id}")
     public ResponseEntity<Optional<Student>> updateIsWorking(@PathVariable Long id, @RequestParam boolean working) {
-        Optional<Student> studentDaModificare = studentService.updateIsWorking(id, working);
+        Optional<Student> studentDaModificare = studentService.updateIsWorking(id,working);
         return ResponseEntity.ok().body(studentDaModificare);
     }
 }
